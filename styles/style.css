@@ -1,5 +1,361 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: var(--page-background-color);
 }
+
+.header {
+  display: grid;
+  padding: 10px;
+  min-height: 668px;
+  height: 100vh;
+  position: relative;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.header__theme-menu-item {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__theme-menu-button {
+  all: unset;
+  padding-top: 1.5px;
+  padding-right: 13px;
+  padding-bottom: 4.5px;
+  padding-left: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: var(--accent-color);
+  text-transform: lowercase;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-hover-color);
+}
+
+.header__theme-menu-button.header__theme-menu-button_active {
+  outline: 1px solid var(--button-border-color);
+}
+
+.title-focus {
+  font-weight: bold;
+  font-size: var(--h1-font-size);
+  line-height: 83%;
+  letter-spacing: 0;
+  color: var(--h1-text-color);
+  text-shadow: 4px 4px 0 var(--h1-shadow-color);
+}
+
+.header__title {
+  font-weight: bold;
+  line-height: 23.4px;
+  letter-spacing: 0;
+  max-width: 355px;
+  justify-self: end;
+}
+
+.title-decor {
+  background-color: var(--background-text-color);
+  color: var(--main-title-color);
+}
+
+.header__rec {
+  display: var(--rec);
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.header__rec::before {
+  content: "REC";
+  position: absolute;
+  top: 10px;
+  right: 38px;
+  font-weight: normal;
+  color: var(--accent-color);
+}
+
+.header__rec::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 19px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+}
+
+.main {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main__section {
+  padding: 0 10px;
+  display: grid;
+  gap: 20px;
+}
+
+.main__title {
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+  color: var(--title-text-color);
+}
+
+.main__article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main__text {
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+}
+
+.title-decor {
+  background-color: var(--background-text-color);
+  color: var(--main-title-color);
+}
+
+.main__description {
+  line-height: 23.4px;
+  letter-spacing: 0;
+  color: var(--text-color);
+}
+
+.main__link {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-link-color);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 0 var(--h1-shadow-color);
+}
+.main__section div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text-paragraph {
+  font-weight: normal;
+}
+
+.images {
+  display: grid;
+  gap: 10px;
+}
+
+.main__section div.main__images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main__image {
+  width: 100%;
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 10px;
+  min-height: 668px;
+  height: 100vh;
+  display: grid;
+  position: relative;
+  grid-template-rows: min-content;
+  align-content: center;
+  justify-items: center;
+}
+
+@media (width >= 768px) {
+  .header {
+    padding: 20px;
+    min-height: 1024px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  h1.title-focus {
+    margin-left: -20px;
+  }
+
+  .header__title {
+    max-width: 364px;
+    justify-self: end;
+  }
+
+  .header__rec::before {
+    top: 20px;
+    right: 48px;
+  }
+
+  .header__rec::after {
+    top: 28px;
+    right: 28px;
+  }
+
+  .main {
+    padding: 0 10px;
+    margin-top: 60px;
+    gap: 80px;
+  }
+
+  .first {
+    grid-template-columns: 236px 1fr;
+    grid-template-rows: repeat(auto-fill, min-content);
+  }
+
+  .first .main__article {
+    grid-column: 2;
+  }
+
+  .second .main__title {
+    inline-size: 236px;
+  }
+
+  .third {
+    grid-template-columns: 236px 1fr;
+  }
+
+  .images {
+    gap: 20px;
+  }
+
+  .main__section div.main__images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+    gap: 20px;
+  }
+
+  .sunset {
+    grid-area: sunset;
+  }
+
+  .ice-cream {
+    grid-area: ice-cream;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .tape {
+    grid-area: tape;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .street {
+    grid-area: street;
+  }
+
+  .footer {
+    margin-top: 60px;
+    min-height: 1024px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-height: 768px;
+  }
+
+  .header__theme-menu {
+    align-self: start;
+    justify-items: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .title-focus {
+    font-size: 157px;
+  }
+
+  .header__title {
+    align-self: center;
+    max-width: 491px;
+  }
+
+  .first {
+    grid-template-columns: 315px 1fr;
+  }
+
+  .second .main__title {
+    inline-size: 315px;
+  }
+
+  .second div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .third {
+    grid-template-columns: 315px 1fr;
+  }
+
+  .footer {
+    min-height: 768px;
+  }
+}
+
