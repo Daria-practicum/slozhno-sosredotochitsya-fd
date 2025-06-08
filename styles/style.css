@@ -157,10 +157,6 @@
   letter-spacing: 0;
 }
 
-.title-decor {
-  background-color: var(--background-text-color);
-  color: var(--main-title-color);
-}
 
 .main__description {
   line-height: 23.4px;
